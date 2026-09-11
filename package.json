@@ -1,0 +1,20 @@
+{
+  "name": "naano",
+  "version": "1.0.0",
+  "description": "Naano - The B2B LinkedIn Creator Marketplace",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "naano",
+    "b2b",
+    "marketplace",
+    "linkedin",
+    "creators",
+    "marketing"
+  ],
+  "author": "Naano Team",
+  "license": "ISC"
+}

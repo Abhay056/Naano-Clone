@@ -1,0 +1,377 @@
+/* Naano Custom Enhancements and Animations */
+:root {
+  --nn-ink: #111318;
+  --nn-sky-soft: #F3F8FF;
+  --accent: #2563EB;
+  --font-inter: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-jakarta: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-inter);
+  margin: 0;
+  padding: 0;
+  background: #FCFCFB;
+  color: #17181C;
+  overflow-x: hidden;
+}
+
+/* Background noise texture */
+.bg-noise {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 99;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Dynamic sticky navbar */
+#naano-nav {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#naano-nav.scrolled #naano-nav-pill {
+  background: rgba(255, 255, 255, 0.82) !important;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border-bottom: 1px solid rgba(228, 225, 220, 0.7);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.06);
+  padding: 12px 56px !important;
+}
+
+/* Cloud Atmosphere Animation */
+@keyframes cloudDrift {
+  0% { transform: scale(1) translateY(0px); }
+  50% { transform: scale(1.02) translateY(-8px); }
+  100% { transform: scale(1) translateY(0px); }
+}
+
+.lp-cloud-scene img {
+  animation: cloudDrift 14s ease-in-out infinite;
+}
+
+/* Quote word scroll reveal */
+blockquote span[data-qw] {
+  transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1), color 0.25s ease;
+}
+
+blockquote span[data-qw].active {
+  opacity: 1 !important;
+}
+
+/* Marquee track animation */
+@keyframes naanoMarquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.naano-trust-track {
+  display: inline-flex;
+  white-space: nowrap;
+  animation: naanoMarquee 30s linear infinite !important;
+}
+
+.naano-trust-track:hover {
+  animation-play-state: paused !important;
+}
+
+/* Modals */
+.naano-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(17, 19, 24, 0.65);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+  padding: 20px;
+}
+
+.naano-modal-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.naano-modal-content {
+  background: #FFFFFF;
+  border-radius: 24px;
+  padding: 32px;
+  max-width: 520px;
+  width: 100%;
+  position: relative;
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.25);
+  transform: translateY(20px) scale(0.97);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.naano-modal-overlay.active .naano-modal-content {
+  transform: translateY(0) scale(1);
+}
+
+.naano-video-modal {
+  max-width: 800px;
+  padding: 20px;
+  background: #111318;
+  color: #FFF;
+}
+
+.naano-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: #8E9096;
+  cursor: pointer;
+  line-height: 1;
+  transition: color 0.15s ease;
+  z-index: 10;
+}
+
+.naano-modal-close:hover {
+  color: #111318;
+}
+
+.naano-video-modal .naano-modal-close {
+  color: #FFF;
+}
+
+.naano-video-wrapper {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #000;
+}
+
+.naano-video-wrapper video {
+  width: 100%;
+  height: auto;
+  max-height: 480px;
+  display: block;
+}
+
+.naano-video-caption {
+  padding: 16px 8px 6px;
+}
+
+.naano-video-caption h4 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #FFF;
+}
+
+.naano-video-caption p {
+  margin: 4px 0 0;
+  font-size: 14px;
+  color: #A0A2AA;
+}
+
+/* Auth Tabs */
+.naano-auth-tabs {
+  display: flex;
+  background: #F1F3F5;
+  border-radius: 12px;
+  padding: 4px;
+  margin-bottom: 24px;
+}
+
+.auth-tab-btn {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  background: transparent;
+  font-weight: 600;
+  font-size: 14px;
+  color: #6B6D74;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.auth-tab-btn.active {
+  background: #FFFFFF;
+  color: #111318;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+}
+
+.auth-tab-pane {
+  display: none;
+}
+
+.auth-tab-pane.active {
+  display: block;
+}
+
+/* Form Styles */
+.form-group {
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #33353B;
+  margin-bottom: 6px;
+}
+
+.naano-input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #E2E4E8;
+  border-radius: 10px;
+  font-size: 14.5px;
+  font-family: inherit;
+  box-sizing: border-box;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.naano-input:focus {
+  outline: none;
+  border-color: #2563EB;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.naano-btn-primary {
+  background: #17181C;
+  color: #FFF;
+  border: none;
+  padding: 13px 20px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.naano-btn-primary:hover {
+  background: #000;
+  transform: translateY(-1px);
+}
+
+.naano-btn-primary:active {
+  transform: translateY(0);
+}
+
+/* Time slots */
+.time-slots {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.time-slot-btn {
+  padding: 10px;
+  border: 1px solid #E2E4E8;
+  border-radius: 8px;
+  background: #FFF;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.15s ease;
+}
+
+.time-slot-btn.active, .time-slot-btn:hover {
+  border-color: #17181C;
+  background: #17181C;
+  color: #FFF;
+}
+
+.booking-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+/* Toast Notification */
+.toast-container {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.naano-toast {
+  background: #17181C;
+  color: #FFF;
+  padding: 14px 20px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  animation: slideInToast 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes slideInToast {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Resources Dropdown */
+.lp-nav-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background: #FFFFFF;
+  border: 1px solid #E8E6E2;
+  border-radius: 14px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  padding: 10px;
+  min-width: 220px;
+  display: none;
+  flex-direction: column;
+  z-index: 100;
+}
+
+.lp-nav-group:hover .lp-nav-dropdown,
+.lp-nav-dropdown.active {
+  display: flex;
+}
+
+.lp-dropdown-item {
+  padding: 9px 14px;
+  font-size: 14px;
+  color: #17181C;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background 0.15s ease;
+  font-weight: 500;
+}
+
+.lp-dropdown-item:hover {
+  background: #F4F3F0;
+}
+
+/* Cursor pointer on interactive items */
+[data-brand-animate], .cs-chip, button, a {
+  cursor: pointer;
+}
