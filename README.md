@@ -2,6 +2,9 @@
 
 Naano is the B2B LinkedIn creator marketplace where brands discover and book vetted creators for sponsored LinkedIn campaigns with fixed per-post pricing, attribution tracking, and streamlined workflow management.
 
+## Live demo
+[LINK](https://naano-clone-delta.vercel.app/)
+
 ## 🚀 Key Features
 
 - **Creator Marketplace**: Browse 3,000+ vetted B2B voices across 100+ countries with audience fit matching.
@@ -11,7 +14,6 @@ Naano is the B2B LinkedIn creator marketplace where brands discover and book vet
 - **Self-Serve & Managed Tiers**: Flexible plans tailored for fast-growing B2B teams and enterprises.
 
 ## 🛠️ Getting Started
-
 ### Local Development Server
 
 Run the development server with:
@@ -19,8 +21,6 @@ Run the development server with:
 ```bash
 npm run dev
 ```
-
-Then visit [http://localhost:3000](http://localhost:3000) in your browser.
 
 ### Project Structure
 
