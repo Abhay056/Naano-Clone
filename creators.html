@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Naano: Creator Portal - Monetize B2B LinkedIn Content with Fixed Pricing</title>
+  <meta name="description" content="Naano Creator Portal - Set fixed per-post rates, accept verified B2B SaaS briefs, and receive instant payouts via Stripe." />
+  <link rel="icon" href="lp/naano-logo-nav.png" type="image/png" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/bundle.css" />
+  <link rel="stylesheet" href="css/custom.css" />
+  <link rel="stylesheet" href="css/surfaces.css" />
+</head>
+<body class="surface-body">
+  <div class="bg-noise"></div>
+
+  <!-- Surface Navigation Header -->
+  <header class="surface-header">
+    <div class="surface-header-inner">
+      <div class="brand-side">
+        <a href="/" class="logo-link">
+          <img src="lp/naano-logo-nav.png" alt="Naano" class="logo-img" />
+        </a>
+        <div class="surface-badge supply">
+          <span class="badge-dot pulse-blue"></span>
+          <strong>Supply Surface: Creator Workspace</strong>
+        </div>
+      </div>
+
+      <!-- Quick Surface Switcher -->
+      <div class="surface-switcher-bar">
+        <a href="/company" class="switcher-btn">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+          Brand Surface (Demand)
+        </a>
+        <a href="/creators" class="switcher-btn active">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+          Creator Surface (Supply)
+        </a>
+      </div>
+
+      <div class="header-actions">
+        <div class="escrow-pill payout-ready">
+          <span class="escrow-label">Stripe Balance:</span>
+          <span class="escrow-val">€3,750.00</span>
+        </div>
+        <div class="creator-profile-badge">
+          <img src="lp/avatar-b.png" alt="Eric B." class="company-logo-avatar" />
+          <div>
+            <span class="company-name">Eric B.</span>
+            <small class="badge-verified">Verified Creator</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="surface-container">
+    <!-- Surface Hero Banner -->
+    <div class="surface-banner creator-banner">
+      <div class="banner-content">
+        <h1>Creator Studio & Deal Room</h1>
+        <p>Set your transparent per-post rate card, review incoming inbound campaign briefs from top SaaS brands, and get paid instantly without invoices.</p>
+      </div>
+      <div class="banner-metrics">
+        <div class="metric-card">
+          <span class="m-title">Fixed Rate Card</span>
+          <span class="m-val text-blue">€450.00</span>
+          <span class="m-sub">per sponsored post</span>
+        </div>
+        <div class="metric-card">
+          <span class="m-title">Lifetime Earned</span>
+          <span class="m-val text-green">€18,900</span>
+          <span class="m-sub">42 Campaigns Delivered</span>
+        </div>
+        <div class="metric-card">
+          <span class="m-title">Avg. Engagement</span>
+          <span class="m-val">4.8%</span>
+          <span class="m-sub">Verified ICP Reach</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Creator Tabs Navigation -->
+    <div class="surface-tabs">
+      <button class="s-tab-btn active" data-tab="deals">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="M7 15h0M2 9.5h20"></path></svg>
+        1. Deal Room & Inbound Campaign Offers
+        <span class="tab-badge">1 New Offer</span>
+      </button>
+      <button class="s-tab-btn" data-tab="editor">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+        2. Draft Studio & Post Submission
+      </button>
+      <button class="s-tab-btn" data-tab="ratecard">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>
+        3. Rate Card & Audience Settings
+      </button>
+      <button class="s-tab-btn" data-tab="payouts">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+        4. Stripe Connect & Payout Log
+      </button>
+    </div>
+
+    <!-- TAB 1: DEAL ROOM -->
+    <section id="tab-deals" class="tab-pane active">
+      <div class="pane-header">
+        <div>
+          <h2>Inbound Campaign Offers</h2>
+          <p>B2B SaaS companies have pre-funded escrow matching your fixed price. Review the brief and accept to lock in your calendar slot.</p>
+        </div>
+      </div>
+
+      <div class="deal-room-list">
+        <!-- Deal Item 1 -->
+        <div class="deal-card new-deal">
+          <div class="deal-header">
+            <div class="brand-avatar-box">
+              <img src="lp/logo-leadbay.png" alt="Leadbay" />
+              <div>
+                <h3>Leadbay • Q4 Outbound & AI Launch</h3>
+                <span class="deal-tag">Fixed Offer: €450 • 1 Post Deliverable</span>
+              </div>
+            </div>
+            <span class="status-badge live">Funds In Escrow</span>
+          </div>
+
+          <div class="deal-body">
+            <div class="brief-summary">
+              <strong>Campaign Angle:</strong>
+              <p>Share how SDR teams eliminate 15 hours of manual LinkedIn research using AI enrichment. Include personal perspective on outbound efficiency.</p>
+            </div>
+            <div class="deliverable-requirements">
+              <span><strong>Format:</strong> Native LinkedIn Text + Image attachment</span>
+              <span><strong>Deadline:</strong> Submit draft by Wednesday 6:00 PM</span>
+              <span><strong>Target Audience:</strong> Founders, VPs of Sales, GTM Leads</span>
+            </div>
+          </div>
+
+          <div class="deal-actions">
+            <button class="btn-secondary" onclick="window.showToast('Decline offer sent to Leadbay')">Decline</button>
+            <button class="naano-btn-primary" onclick="acceptDeal('Leadbay')">Accept Brief & Lock Slot (€450 Escrow)</button>
+          </div>
+        </div>
+
+        <!-- Deal Item 2 -->
+        <div class="deal-card accepted-deal">
+          <div class="deal-header">
+            <div class="brand-avatar-box">
+              <img src="lp/logo-blogseo.png" alt="BlogSEO" />
+              <div>
+                <h3>BlogSEO • AI Search Engine Visibility Case Study</h3>
+                <span class="deal-tag">Fixed Offer: €450 • Completed & Live</span>
+              </div>
+            </div>
+            <span class="status-badge completed">Paid via Stripe (€450)</span>
+          </div>
+          <div class="deal-body">
+            <p>Post published on Aug 28th. Drove 34,200 impressions and 64 SQLs for the client.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 2: DRAFT STUDIO & SUBMISSION -->
+    <section id="tab-editor" class="tab-pane">
+      <div class="pane-grid-2">
+        <div class="brief-form-card">
+          <h2>Draft Composer</h2>
+          <p>Draft your post with real-time character counting, hook formatting, and required brand CTA verification.</p>
+
+          <div class="form-group">
+            <label>Selected Campaign</label>
+            <select class="naano-input">
+              <option>Leadbay - Q4 AI Workflow Launch (€450)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Post Hook & Body Copy</label>
+            <textarea id="postCopyInput" class="naano-input" rows="8" oninput="updateLinkedInPreview()">Most SaaS teams waste 15+ hours every week manually copying leads between LinkedIn and their CRM.
+
+Last month we tested a new setup with @Leadbay. Here is the breakdown:
+👉 Step 1: Filter buyer intent triggers
+👉 Step 2: Auto-enrich verified work emails
+👉 Step 3: Trigger hyper-personalized outreach sequences.
+
+Result: 3.4x reply rate within 14 days without hiring more SDRs.</textarea>
+          </div>
+
+          <div class="form-group">
+            <label>Attributed Link Attachment (Auto-generated by Naano)</label>
+            <input type="text" readonly value="https://leadbay.ai/demo?ref=naano_eric_b" class="naano-input code-font" />
+          </div>
+
+          <button class="naano-btn-primary full-width" onclick="submitDraftToBrand()">
+            Submit Draft for Brand Pre-Publish Review
+          </button>
+        </div>
+
+        <!-- Live LinkedIn Post Preview -->
+        <div class="roster-escrow-card">
+          <h2>Live LinkedIn Feed Simulation</h2>
+          <p>Exact rendering of how your sponsored post will appear on LinkedIn.</p>
+
+          <div class="mock-linkedin-post preview-sticky">
+            <div class="post-author-row">
+              <img src="lp/avatar-b.png" alt="Eric" class="post-mini-avatar" />
+              <div>
+                <strong>Eric B.</strong> • <span>1st</span>
+                <p>B2B SaaS Growth & AI Strategist | 48k Followers</p>
+                <small style="color:#8A8C92">Just now • 🌐</small>
+              </div>
+            </div>
+            <div class="post-body" id="livePostPreviewText">
+              Most SaaS teams waste 15+ hours every week manually copying leads between LinkedIn and their CRM.<br/><br/>
+              Last month we tested a new setup with @Leadbay. Here is the breakdown:<br/>
+              👉 Step 1: Filter buyer intent triggers<br/>
+              👉 Step 2: Auto-enrich verified work emails<br/>
+              👉 Step 3: Trigger hyper-personalized outreach sequences.<br/><br/>
+              Result: 3.4x reply rate within 14 days without hiring more SDRs.
+            </div>
+            <div class="post-preview-attachment">
+              <img src="lp/photo-leadbay-app.png" alt="Leadbay App" />
+              <div class="attachment-meta">
+                <span class="domain">leadbay.ai</span>
+                <strong>Automate ICP Lead Discovery & Enrichment</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 3: RATE CARD SETTINGS -->
+    <section id="tab-ratecard" class="tab-pane">
+      <div class="brief-form-card" style="max-width:720px;margin:0 auto;">
+        <h2>Fixed Rate Card & Audience Categorization</h2>
+        <p>Set the fixed price brands pay to book you. Transparent rates eliminate lengthy email negotiations.</p>
+
+        <div class="form-group">
+          <label>Standard Fixed Price Per LinkedIn Post (€)</label>
+          <input type="number" value="450" class="naano-input" id="creatorRateInput" />
+          <small>Net payout: You receive 100% of this amount directly via Stripe Connect.</small>
+        </div>
+
+        <div class="form-group">
+          <label>3-Post Package Rate (€)</label>
+          <input type="number" value="1200" class="naano-input" />
+        </div>
+
+        <div class="form-group">
+          <label>Audience ICP Niches (Select all that apply)</label>
+          <div class="tags-row">
+            <span class="tag-chip active">B2B SaaS Founders</span>
+            <span class="tag-chip active">VPs of Sales & RevOps</span>
+            <span class="tag-chip active">AI & Automation Engineers</span>
+            <span class="tag-chip">Product Managers</span>
+            <span class="tag-chip">Venture Capital & Investors</span>
+          </div>
+        </div>
+
+        <button class="naano-btn-primary" onclick="window.showToast('Rate card updated in Naano marketplace!')">
+          Save Rate Card & Profile
+        </button>
+      </div>
+    </section>
+
+    <!-- TAB 4: STRIPE PAYOUTS -->
+    <section id="tab-payouts" class="tab-pane">
+      <div class="pane-header">
+        <div>
+          <h2>Instant Stripe Connect Payouts</h2>
+          <p>No 30-to-60-day invoice wait times. As soon as your approved post is confirmed live on LinkedIn, your escrow payout is released automatically.</p>
+        </div>
+      </div>
+
+      <div class="attribution-table-card">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Campaign Brand</th>
+              <th>Post Date</th>
+              <th>Escrow Release Trigger</th>
+              <th>Status</th>
+              <th>Payout Amount</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Leadbay Inc.</strong></td>
+              <td>Sep 10, 2026</td>
+              <td>Live URL Verification Verified</td>
+              <td><span class="status-badge completed">Paid to Bank</span></td>
+              <td class="text-green"><strong>€450.00</strong></td>
+            </tr>
+            <tr>
+              <td><strong>BlogSEO</strong></td>
+              <td>Aug 28, 2026</td>
+              <td>Live URL Verification Verified</td>
+              <td><span class="status-badge completed">Paid to Bank</span></td>
+              <td class="text-green"><strong>€450.00</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Folk CRM</strong></td>
+              <td>Aug 14, 2026</td>
+              <td>Live URL Verification Verified</td>
+              <td><span class="status-badge completed">Paid to Bank</span></td>
+              <td class="text-green"><strong>€450.00</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <div id="toastContainer" class="toast-container"></div>
+  <script src="js/surfaces.js"></script>
+</body>
+</html>

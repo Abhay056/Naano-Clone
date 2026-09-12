@@ -2,7 +2,7 @@ const http = require('http');
 const fs = require('fs');
 const path = require('path');
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8000;
 
 const MIME_TYPES = {
   '.html': 'text/html; charset=utf-8',
@@ -28,6 +28,15 @@ const server = http.createServer((req, res) => {
   }
 
   let filePath = path.join(__dirname, reqPath);
+
+  // If path has no extension and doesn't exist, try adding .html
+  if (!path.extname(filePath) && !fs.existsSync(filePath)) {
+    if (fs.existsSync(filePath + '.html')) {
+      filePath = filePath + '.html';
+    } else if (fs.existsSync(path.join(__dirname, 'public', reqPath + '.html'))) {
+      filePath = path.join(__dirname, 'public', reqPath + '.html');
+    }
+  }
 
   if (!fs.existsSync(filePath)) {
     filePath = path.join(__dirname, 'public', reqPath);
